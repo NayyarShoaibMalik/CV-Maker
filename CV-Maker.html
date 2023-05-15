@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+	.form {
+	  display: block;
+	  overflow: scroll;
+	  height: 100vh;
+	  width: 100vw;
+	  color: rgb(11, 36, 65);
+	  background-color: #0c485ad4;
+	}
+
+	.head {
+	  font-style: italic;
+	  padding-left: 24px;
+	  padding-top: 10px;
+	}
+
+	.info {
+	  padding-top: 40px;
+	  gap: 15px 1px;
+	  font-size: larger;
+	  text-transform: capitalize;
+	  display: flex;
+	  justify-content: center;
+	  flex-direction: column;
+	}
+
+	.info input {
+	  border: 1px solid white;
+	  font-size: 15px;
+	  border-radius: 5px;
+	  margin: 0 10px;
+	}
+
+	.info input::placeholder {
+	  font-size: 12px;
+	}
+
+	.heading {
+	  color: #d1c099;
+	  text-align: center;
+	  margin-bottom: 0px;
+	  padding-top: 34px;
+	  font-size: xx-large;
+	  font-size: calc(1.375rem + 1.5vw);
+	  text-transform: capitalize;
+	  text-shadow: 2px 1px rgb(34, 35, 46);
+	  font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.sub {
+	  margin-top: 23px;
+	  display: flex;
+	  justify-content: center;
+	}
+
+	.form-onclick {
+	  display: none;
+	}
+
+	.home {
+	  display: none;
+	}
+
+	.home-onclick {
+	  display: block;
+	}
+
+	.main {
+	  display: flex;
+	  gap: 2px 4px;
+	  justify-content: space-around;
+	}
+
+	.first {
+	  text-align: center;
+	  height: 1216px;
+	  width: 188px;
+	  margin-top: -14px;
+	  margin-left: 2px;
+	  background-color: rgb(15, 11, 63);
+	  color: white;
+	}
+
+	.second {
+	  overflow: scroll;
+	  height: 900px;
+	  width: 100vw;
+	  color: rgb(7, 7, 82);
+	}
+
+	.footer {
+	  width: 100vw;
+	  height: 120px;
+	  background-color: #c7ddd2;
+	}
+
+   /* .download {
+	  top: 1416px;
+	  position: absolute;
+	  left: 450px;
+	}
+*/
+	.about {
+	  color: #8ec9d9;
+	  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+		sans-serif;
+	  font-size: 20px;
+	  margin-left: 20px;
+	}
+
+	textarea,
+	input {
+	  margin: 0 20px;
+	  padding: 5px 10px;
+	  border-radius: 10px;
+	  font-family: Arial, Helvetica, sans-serif;
+	  border: 2px solid #555;
+	}
+
+	button {
+
+	  font-size: 16px;
+	  padding: 5px 10px;
+	  color: aliceblue;
+	  border-radius: 5px;
+	  border: 1px solid rgba(255, 255, 255, 0.575);
+	  background-color: rgb(57, 167, 67);
+	}
+
+	ol {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 95px;
+	}
+
+	.Skil3 {
+	  padding-top: 20px;
+	}
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+</head>
+
+
+<body>
+  <div class="form">
+	<h1 class="heading">put your details here</h1>
+	<div class="info">
+	  <span>name</span>
+	  <input type="text" id="name" / placeholder="your name ">
+	  <span>Collage Name</span>
+	  <input type="text" id="collage" / placeholder="your collage name">
+	  <span>Start Date - End Date </span>
+	  <input type="text" id="ses" placeholder="ex. 2018-2021" />
+	  <span> You have any past experience </span>
+	  <input type="text" id="exprince" placeholder="if you have no exprince please fill 0 years" />
+	  <span> Domain/Position </span>
+	  <input type="text" id="post"
+		placeholder="ex.  you are a software eng./ if you are a fresher please fill student  " />
+	  <span style="font-size: xx-large; text-align: center">ABOUT</span>
+	  <textarea name="about" id="about" cols="30" rows="4"></textarea>
+	  <span style="font-size: xx-large; text-align: center">EDUCATION</span>
+	  <textarea name="Education" id="Education" cols="30" rows="4"></textarea>
+	  <span style="font-size: xx-large; text-align: center">HABITS</span>
+	  <textarea name="habits" id="habits" cols="30" rows="4"></textarea>
+	  <span style="font-size: xx-large; text-align: center">EXTRA ACTIVITY</span>
+	  <textarea name="Extra" id="Extra" cols="30" rows="4"></textarea>
+	  <span style="font-size: xx-large; text-align: center">SKILLS</span>
+	  <textarea name="skills" id="skills" cols="30" rows="4"></textarea>
+	</div>
+	<div class="sub">
+	  <button class="btn btn-dark" onclick="info()">Submit</button>
+	</div>
+  </div>
+  <!--first part almost done  lest move on second part -->
+  <div class="home">
+	<div class="head">
+	  <h1 id="Name"></h1>
+	  <p id="dom"></p>
+	  <span id="time_dure"></span>
+	</div>
+	<hr>
+	<div class="main" id="cv">
+	  <div class="first">
+		<h2 id="Skil3">
+		  Skills
+		</h2>
+		<span id="skill">
+
+		</span>
+	  </div>
+	  <div class="second">
+		<p id="about1">
+
+		</p>
+		<hr>
+		<p id="ed">
+
+		</p>
+		<hr>
+		<p id="habits1">
+
+		</p>
+		<hr>
+		<p id="ex_act">
+
+		</p>
+	  </div>
+	</div>
+	<div class="footer">
+	  <span id="verify"> verify by : <span id="verify_name"> </span> </span>
+	  <br />
+	  <span>created on : <span id="time"></span></span>
+	  <div class="download">
+		<button id="download" onclick="down()">Download</button>
+	  </div>
+
+	</div>
+  </div>
+  <script>
+	function info() {
+	  var name = document.getElementById("name").value;
+	  var collage = document.getElementById("collage").value;
+	  var about = document.getElementById("about").value;
+	  var Education = document.getElementById("Education").value;
+	  var habits = document.getElementById("habits").value;
+	  var Extra = document.getElementById("Extra").value;
+	  var skills = document.getElementById("skills").value;
+	  var Domain = document.getElementById("post").value;
+	  var ses = document.getElementById("ses").value;
+	  var experience = document.getElementById("exprince").value;
+	  //console.log(name, collage, about, Education, habits, Extra, skills);
+	  document.querySelector(".form").classList.add("form-onclick");
+	  document.querySelector(".home").classList.add("home-onclick");
+	  //add data in c.v
+	  document.querySelector("#Name").innerHTML = name;
+	  document.querySelector("#dom").innerHTML = Domain;
+	  document.querySelector("#time_dure").innerHTML = "  " + ses + " ";
+	  document.querySelector("#about1").innerHTML = "<h3>About</h3>" + about;
+	  document.querySelector("#ed").innerHTML =
+		"<h3>Education </h3>" + Education;
+	  document.querySelector("#habits1").innerHTML = "<h3>Habits </h3>" + habits;
+	  document.querySelector("#ex_act").innerHTML = "<h3>Extra Activtiy</h3>" + Extra;
+	  var date = new Date();
+	  document.querySelector("#time").innerHTML = date;
+	  //add skills  
+	  var match = skills.split(', ');
+	  document.querySelector("#skill").innerHTML = "<ol><li>" + match[0] + "</li><li>" + match[1] + "</li><li>" + match[2] + "</li><li>" + match[3] + "</li><li>" + match[4] + "</li><li>" + match[5] + "</li><li>" + match[6] + "</li><li>" + match[7] + "</li><li>" + match[8] + "</li><li>" + match[9] + "</li></ol>";
+	  document.querySelector("#verify_name").innerHTML = name;
+
+
+	}
+	function down() {
+	  const element = document.getElementById('cv');
+	  html2pdf().from(element).save();
+	}
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+	integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+</body>
+
+</html>
